@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js" defer></script>
+    <title>Editor de memes</title>
+</head>
+<body data-theme="light-theme">
+    <header class="header">
+        <h1>Generador de Memes</h1>
+        <nav>
+            <button class="btn-img" id="btn-img"><i class="fa-regular fa-file-image"></i> Imágen</button>
+            <button class="btn-text" id="btn-text"><i class="fa-solid fa-font"></i> Texto</button>
+            <button class="btn-dark-theme" id="btn-dark-theme"><i class="fa-regular fa-lightbulb"></i> Modo Oscuro</button>
+            <!-- <button class="btn-light-theme" id="btn-light-theme"><i class="fa-regular fa-lightbulb"></i> Modo Claro</button> -->
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <p class="container-top"></p>
+            <figure>
+                <img src="" class="container-img" id="container-img" alt="imágen de meme">
+            </figure>
+            <p class="container-bottom"></p>
+        </section>
+    </main>
+    <aside class="form">
+        <section class="img-form" id="img-form">
+            <span class="btn-img-close" id="btn-img-close">&times;</span>
+            <h2>IMAGEN</h2>
+            <div class="image">
+                <h3>URL</h3>
+                <input type="text" name="url" id="url" placeholder=" Insertar URL de imágen">
+            </div>
+            <div class="background">
+                <h3>FONDO</h3>
+                <div class="background-container">
+                    <input type="color" id="color" value="#FFFFFF">
+                    <select name="attributes" class="attributes" id="attributes">
+                    <option value="Ninguno">Ninguno</option>
+                    <option value="aclarar">Aclarar</option>
+                    <option value="oscurecer">Oscurecer</option>
+                    <option value="diferencia">Diferencia</option>
+                    <option value="luminosidad">Luminosidad</option>
+                    <option value="multiplicar">Multiplicar</option>
+                    </select>
+                </div>
+            </div>
+            <div class="filters">
+                <h3>FILTROS</h3>
+                <div class="filters-range">
+                    <p>BRILLO</p>
+                    <input type="range" min="0" max="10" value="0" step="1">
+                    <p>OPACIDAD</p>
+                    <input type="range" min="0" max="10" value="0" step="1">
+                    <p>CONTRASTE</p>
+                    <input type="range" min="0" max="10" value="0" step="1">
+                    <p>DESENFOQUE</p>
+                    <input type="range" min="0" max="10" value="0" step="1">
+                    <p>ESCALA DE GRISES</p>
+                    <input type="range" min="0" max="10" value="0" step="1">
+                    <p>SEPIA</p>
+                    <input type="range" min="0" max="10" value="0" step="1">
+                    <p>HUE</p>
+                    <input type="range" min="0" max="10" value="0" step="1">
+                    <p>SATURADO</p>
+                    <input type="range" min="0" max="10" value="0" step="1">
+                    <p>NEGATIVO</p>
+                    <input type="range" min="0" max="10" value="0" step="1">
+                </div>
+                <button class="btn-reset-filters">Reestablecer filtros</button>
+            </div>
+        </section>
+        <section class="text-form" id="text-form">
+            <span class="btn-text-close" id="btn-text-close">&times;</span>
+            <h2>TEXTO</h2>
+            <div class="top-text">
+                <h3>SUPERIOR</h3>
+                <input type="text" name="top-text" id="top-text" value=" TOP TEXT">
+                <div class="bottom-text-checkbox">
+                    <input type="checkbox">
+                    <label for="no-top-text">Sin texto superior</label>
+                </div>
+            </div>
+            <div class="bottom-text">
+                <h3>INFERIOR</h3>
+                <input type="text" name="bottom-text" id="bottom-text" value=" BOTTOM TEXT">
+                <div class="bottom-text-checkbox">
+                    <input type="checkbox">
+                    <label for="no-bottom-text">Sin texto inferior</label>
+                </div>
+            </div>
+            <div class="text-form-font">
+                <h3>FUENTE</h3>
+                <select name="font" class="font" id="font">
+                    <option value="arial">Arial</option>
+                    <option value="arial black">Arial Black</option>
+                    <option value="american typewritter">American Typewritter</option>
+                    <option value="andale mono">Andale mono</option>
+                    <option value="comic sans ms">Comic Sans MS</option>
+                    <option value="helvetica">Helvetica</option>
+                    <option value="Impact" selected>Impact</option>
+                    <option value="verdana">Verdana</option>
+                    <option value="times new roman">Times New Roman</option>
+                </select>
+                <input type="number" name="number" id="number" value="40">
+                <button class="btn-left"><i class="fa-solid fa-align-left"></i></button>
+                <button class="btn-center"><i class="fa-solid fa-align-center"></i></button>
+                <button class="btn-right"><i class="fa-solid fa-align-right"></i></button>
+            </div>
+            <div class="text-form-color">
+                <div class="text-form-color-container">
+                    <div>
+                        <h3>COLOR</h3>
+                        <input type="color" id="text-color" value="#000000">
+                    </div>
+                    <div>
+                        <h3>FONDO</h3>
+                        <input type="color" id="text-color" value="#FFFFFF">
+                    </div>
+                </div>
+                <div class="text-form-color-checkbox">
+                    <input type="checkbox">
+                    <label for="transparent-background">Fondo transparente</label>
+                </div>
+            </div>
+            <div class="text-form-contour">
+                <h3>CONTORNO</h3>
+                <button class="btn-contour">Ninguno</button>
+                <button class="btn-contour">Claro</button>
+                <button class="btn-contour">Oscuro</button>
+            </div>
+            <div class="text-form-spacing">
+                <h3>ESPACIADO</h3>
+                <input type="number" name="number" id="number" value="35">
+            </div>
+            <div class="text-form-leading">
+                <h3>INTERLINEADO</h3>
+                <select name="leading" class="leading" id="leading">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2" selected>1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </div>
+        </section>
+    </aside>
+</body>
+</html>
