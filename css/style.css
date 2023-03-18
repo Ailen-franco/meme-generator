@@ -271,6 +271,63 @@ input[type=checkbox] {
     cursor: pointer;
 }
 
+/* Media querys */
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    /* main */
+
+    .container {
+        height: 70vh;
+        width: 80vw;
+        margin-top: 30px;
+    }
+
+    .download-btn {
+        margin-top: 30px;
+    }
+}
+
+/*Tablet*/
+
+@media (min-width: 481px) and (max-width: 960px) {
+
+    /* header */
+
+    .header {
+        height: 130px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .btn-img, .btn-text, .btn-dark-theme {
+        font-size: 1em;
+        width: 80px;
+    }
+
+    .btn-dark-theme {
+        width: 120px;
+    }
+
+    /* main */
+
+    .container {
+        height: 70vh;
+        width: 65vw;
+        margin-top: 60px;
+    }
+
+    .download-btn {
+        font-size: 1.5em;
+        margin-top: 60px;
+        height: 70px;
+        width: 250px;
+    }
+}
 
 
 
