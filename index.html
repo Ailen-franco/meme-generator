@@ -9,14 +9,14 @@
     <script src="./js/index.js" defer></script>
     <title>Editor de memes</title>
 </head>
-<body data-theme="light-theme">
+<body>
     <header class="header">
         <h1>Generador de Memes</h1>
-        <nav>
+        <nav class="button-section">
             <button class="btn-img" id="btn-img"><i class="fa-regular fa-file-image"></i> Imágen</button>
             <button class="btn-text" id="btn-text"><i class="fa-solid fa-font"></i> Texto</button>
-            <button class="btn-dark-theme" id="btn-dark-theme"><i class="fa-regular fa-lightbulb"></i> Modo Oscuro</button>
-            <!-- <button class="btn-light-theme" id="btn-light-theme"><i class="fa-regular fa-lightbulb"></i> Modo Claro</button> -->
+            <button class="btn-dark-theme"  id="btn-dark-theme"><i class="fa-regular fa-lightbulb"></i> Modo Oscuro</button>
+            <button class="btn-light-theme hidden" id="btn-light-theme"><i class="fa-regular fa-lightbulb"></i> Modo Claro</button>
         </nav>
     </header>
     <main>
@@ -42,12 +42,12 @@
                 <div class="background-container">
                     <input type="color" id="color" value="#FFFFFF">
                     <select name="attributes" class="attributes" id="attributes">
-                    <option value="Ninguno">Ninguno</option>
-                    <option value="aclarar">Aclarar</option>
-                    <option value="oscurecer">Oscurecer</option>
-                    <option value="diferencia">Diferencia</option>
-                    <option value="luminosidad">Luminosidad</option>
-                    <option value="multiplicar">Multiplicar</option>
+                    <option value="unset">Ninguno</option>
+                    <option value="lighten">Aclarar</option>
+                    <option value="darken">Oscurecer</option>
+                    <option value="difference">Diferencia</option>
+                    <option value="luminosity">Luminosidad</option>
+                    <option value="multiply">Multiplicar</option>
                     </select>
                 </div>
             </div>
@@ -55,25 +55,25 @@
                 <h3>FILTROS</h3>
                 <div class="filters-range">
                     <p>BRILLO</p>
-                    <input type="range" min="0" max="10" value="0" step="1">
+                    <input id="brightness" type="range" min="0" max="1" value="1" step="0.1">
                     <p>OPACIDAD</p>
-                    <input type="range" min="0" max="10" value="0" step="1">
+                    <input id="opacity" type="range" min="0" max="1" value="1" step="0.1">
                     <p>CONTRASTE</p>
-                    <input type="range" min="0" max="10" value="0" step="1">
+                    <input id="contrast" type="range" min="100" max="1000" value="100">
                     <p>DESENFOQUE</p>
-                    <input type="range" min="0" max="10" value="0" step="1">
+                    <input id="blurFilter" type="range" min="0" max="10" value="0" step="0.1">
                     <p>ESCALA DE GRISES</p>
-                    <input type="range" min="0" max="10" value="0" step="1">
+                    <input id="grayscale" type="range" min="0" max="100" value="0" step="1">
                     <p>SEPIA</p>
-                    <input type="range" min="0" max="10" value="0" step="1">
+                    <input id="sepia" type="range" min="0" max="100" value="0" step="1">
                     <p>HUE</p>
-                    <input type="range" min="0" max="10" value="0" step="1">
+                    <input id="hue" type="range" min="0" max="360" value="0" step="1">
                     <p>SATURADO</p>
-                    <input type="range" min="0" max="10" value="0" step="1">
+                    <input id="saturate" type="range" min="100" max="1000" value="100" step="10">
                     <p>NEGATIVO</p>
-                    <input type="range" min="0" max="10" value="0" step="1">
+                    <input id="invert" type="range" min="0" max="1" value="0" step="0.1">
                 </div>
-                <button class="btn-reset-filters">Reestablecer filtros</button>
+                <button class="btn-reset-filters" id="btn-reset-filters">Reestablecer filtros</button>
             </div>
         </section>
         <section class="text-form" id="text-form">
