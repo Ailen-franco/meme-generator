@@ -174,11 +174,32 @@ $("#bottom-checkbox").addEventListener("input", () => {
 
 const fontFamily = document.getElementById("font")
 
-$("#font").addEventListener("change", () => {
+$("#font").addEventListener("input", () => {
     const font = $("#font").value
     $("#container-top").style.fontFamily = font
     $("#container-bottom").style.fontFamily = font
 })
+
+// Text color
+
+const textColor = document.getElementById("text-color")
+
+$("#text-color").addEventListener("input", () => {
+    const text = $("#text-color").value
+    $("#container-top").style.color = text
+    $("#container-bottom").style.color = text
+})
+
+// Text background color
+
+const textBackground = document.getElementById("text-color-background")
+
+$("#text-color-background").addEventListener("input", () => {
+    const textBackground = $("#text-color-background").value
+    $("#container-top").style.backgroundColor = textBackground
+    $("#container-bottom").style.backgroundColor = textBackground
+})
+
 
 // Dark theme
 
