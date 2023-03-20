@@ -27,7 +27,7 @@ const containerImg = document.getElementById("container-img")
 const inputBackground = document.getElementById("color")
 const selectAttributes = document.getElementById("attributes")
 
-// Método url - Nuevo
+// url 
 
 inputUrl.addEventListener('input', () => {
   const imgUrl = inputUrl.value;
@@ -135,6 +135,49 @@ $("#btn-reset-filters").addEventListener("click", () => {
     
     const invert = $("#invert").value
     containerImg.style.filter = `invert(${invert})`
+})
+
+// Aside text inputs
+
+// Text
+
+$("#top-text").addEventListener("input", () => {
+    $("#container-top").innerText = $("#top-text").value
+})
+
+$("#bottom-text").addEventListener("input", () => {
+    $("#container-bottom").innerText = $("#bottom-text").value
+})
+
+// checkbox 
+
+const topCheckbox = document.getElementById("top-checkbox")
+const bottomCheckbox = document.getElementById("bottom-checkbox")
+
+$("#top-checkbox").addEventListener("input", () => {
+     if ($("#top-checkbox").checked) {
+         $("#container-top").classList.add("hidden")
+     } else {
+         $("#container-top").classList.remove("hidden")
+     }
+})
+
+$("#bottom-checkbox").addEventListener("input", () => {
+     if ($("#bottom-checkbox").checked) {
+         $("#container-bottom").classList.add("hidden")
+     } else {
+         $("#container-bottom").classList.remove("hidden")
+     }
+})
+
+// Font
+
+const fontFamily = document.getElementById("font")
+
+$("#font").addEventListener("change", () => {
+    const font = $("#font").value
+    $("#container-top").style.fontFamily = font
+    $("#container-bottom").style.fontFamily = font
 })
 
 // Dark theme

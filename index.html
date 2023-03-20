@@ -12,18 +12,20 @@
 <body>
     <header class="header">
         <h1>Generador de Memes</h1>
-        <nav class="button-section">
+        <nav>
             <button class="btn-img" id="btn-img"><i class="fa-regular fa-file-image"></i> Imágen</button>
             <button class="btn-text" id="btn-text"><i class="fa-solid fa-font"></i> Texto</button>
-            <button class="btn-dark-theme"  id="btn-dark-theme"><i class="fa-regular fa-lightbulb"></i> Modo Oscuro</button>
-            <button class="btn-light-theme hidden" id="btn-light-theme"><i class="fa-regular fa-lightbulb"></i> Modo Claro</button>
+            <div class="button-section">
+                <button class="btn-dark-theme"  id="btn-dark-theme"><i class="fa-regular fa-lightbulb"></i> Modo Oscuro</button>
+                <button class="btn-light-theme hidden" id="btn-light-theme"><i class="fa-regular fa-lightbulb"></i> Modo Claro</button>
+            </div>
         </nav>
     </header>
     <main>
         <section class="container">
-            <p class="container-top"></p>
+            <p class="container-top" id="container-top">TOP TEXT</p>
             <div class="container-img" id="container-img"></div>
-            <p class="container-bottom"></p>
+            <p class="container-bottom" id="container-bottom"> BOTTOM TEXT</p>
         </section>
         <section class="download">
             <button class="download-btn"><i class="fa-solid fa-download"></i> Descargar meme</button>
@@ -83,7 +85,7 @@
                 <h3>SUPERIOR</h3>
                 <input type="text" name="top-text" id="top-text" value=" TOP TEXT">
                 <div class="bottom-text-checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox" id="top-checkbox">
                     <label for="no-top-text">Sin texto superior</label>
                 </div>
             </div>
@@ -91,22 +93,22 @@
                 <h3>INFERIOR</h3>
                 <input type="text" name="bottom-text" id="bottom-text" value=" BOTTOM TEXT">
                 <div class="bottom-text-checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox" id="bottom-checkbox">
                     <label for="no-bottom-text">Sin texto inferior</label>
                 </div>
             </div>
             <div class="text-form-font">
                 <h3>FUENTE</h3>
                 <select name="font" class="font" id="font">
-                    <option value="arial">Arial</option>
-                    <option value="arial black">Arial Black</option>
-                    <option value="american typewritter">American Typewritter</option>
-                    <option value="andale mono">Andale mono</option>
-                    <option value="comic sans ms">Comic Sans MS</option>
-                    <option value="helvetica">Helvetica</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="American Typewriter">American Typewriter</option>
+                    <option value="Andale Mono">Andale mono</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Helvetica">Helvetica</option>
                     <option value="Impact" selected>Impact</option>
-                    <option value="verdana">Verdana</option>
-                    <option value="times new roman">Times New Roman</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
                 </select>
                 <input type="number" name="number" id="number" value="40">
                 <button class="btn-left"><i class="fa-solid fa-align-left"></i></button>

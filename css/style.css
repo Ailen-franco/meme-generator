@@ -48,6 +48,10 @@ h1 {
     font-size: 2em;
 }
 
+nav {
+    display: flex;
+}
+
 .btn-img, .btn-text, .btn-dark-theme, .btn-light-theme {
     background-color: transparent;
     color: var(--font-color-primary);
