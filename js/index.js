@@ -180,14 +180,15 @@ $("#font").addEventListener("input", () => {
     $("#container-bottom").style.fontFamily = font
 })
 
-// Revisar la siguiente función 
-// const fontSize = document.getElementById("number")
+// Font size
 
-// $("#number").addEventListener("input", () => {
-//     const number = $("#number").value
-//     $("#container-top").style.fontSize = number
-//     $("#container-bottom").style.fontSize = number
-// })
+const fontSize = document.getElementById("number") 
+
+$("#number").addEventListener("input", () => {
+    const number = $("#number").value
+    $("#container-top").style.fontSize = `${number}px`
+    $("#container-bottom").style.fontSize = `${number}px`
+})
 
 // Align text
 
