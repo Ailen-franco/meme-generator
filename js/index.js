@@ -180,6 +180,38 @@ $("#font").addEventListener("input", () => {
     $("#container-bottom").style.fontFamily = font
 })
 
+// Revisar la siguiente función 
+// const fontSize = document.getElementById("number")
+
+// $("#number").addEventListener("input", () => {
+//     const number = $("#number").value
+//     $("#container-top").style.fontSize = number
+//     $("#container-bottom").style.fontSize = number
+// })
+
+// Align text
+
+const left = document.querySelector(".btn-left")
+const center = document.querySelector(".btn-center")
+const right = document.querySelector(".btn-right")
+
+$(".btn-left").addEventListener("click", () => {
+    $("#container-top").style.textAlign = "left"
+    $("#container-bottom").style.textAlign = "left"
+})
+
+$(".btn-center").addEventListener("click", () => {
+    $("#container-top").style.textAlign = "center"
+    $("#container-bottom").style.textAlign = "center"
+})
+
+$(".btn-right").addEventListener("click", () => {
+    $("#container-top").style.textAlign = "right"
+    $("#container-bottom").style.textAlign = "right"
+})
+
+
+
 // Text color
 
 const textColor = document.getElementById("text-color")
@@ -199,6 +231,9 @@ $("#text-color-background").addEventListener("input", () => {
     $("#container-top").style.backgroundColor = textBackground
     $("#container-bottom").style.backgroundColor = textBackground
 })
+
+// Contour
+
 
 
 // Dark theme

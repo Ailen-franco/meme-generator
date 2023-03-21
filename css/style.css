@@ -108,6 +108,8 @@ main {
     text-align: center;
     font-size: 2rem;
     height: 13vh;
+    padding: 35px;
+    font-weight: bold;
 }
 
 .download-btn {
