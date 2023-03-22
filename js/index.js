@@ -211,8 +211,6 @@ $(".btn-right").addEventListener("click", () => {
     $("#container-bottom").style.textAlign = "right"
 })
 
-
-
 // Text color
 
 const textColor = document.getElementById("text-color")
@@ -226,6 +224,7 @@ $("#text-color").addEventListener("input", () => {
 // Text background color
 
 const textBackground = document.getElementById("text-color-background")
+const checkboxTransparent = document.getElementById("checkbox-transparent")
 
 $("#text-color-background").addEventListener("input", () => {
     const textBackground = $("#text-color-background").value
@@ -233,7 +232,39 @@ $("#text-color-background").addEventListener("input", () => {
     $("#container-bottom").style.backgroundColor = textBackground
 })
 
+$("#checkbox-transparent").addEventListener("change", () => {
+    if ($("#checkbox-transparent").checked) {
+        $("#container-top").style.backgroundColor = `transparent`
+        $("#container-bottom").style.backgroundColor = `transparent`
+    } else {
+        const textBackground = $("#text-color-background").value
+        $("#container-top").style.backgroundColor = textBackground
+        $("#container-bottom").style.backgroundColor = textBackground
+    }
+})
+
 // Contour
+
+const btnContour = document.getElementById("#btn-contour")
+const btnContourLight = document.getElementById("#btn-contour-light")
+const btnContourDark = document.getElementById("#btn-contour-dark")
+
+$("#btn-contour").addEventListener("click", () => {
+    $("#container-top").style.textShadow = "none" 
+    $("#container-bottom").style.textShadow = "none" 
+})
+
+$("#btn-contour-light").addEventListener("click", () => {
+    $("#container-top").style.textShadow = "2px 2px #fff,-2px 2px #fff,2px -2px #fff,-2px -2px #fff"
+    $("#container-bottom").style.textShadow = "2px 2px #fff,-2px 2px #fff,2px -2px #fff,-2px -2px #fff"
+})
+
+$("#btn-contour-dark").addEventListener("click", () => {
+    $("#container-top").style.textShadow = "2px 2px #000,-2px 2px #000,2px -2px #000,-2px -2px #000"
+    $("#container-bottom").style.textShadow = "2px 2px #000,-2px 2px #000,2px -2px #000,-2px -2px #000"
+})
+
+// Spacing
 
 
 
