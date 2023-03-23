@@ -266,7 +266,33 @@ $("#btn-contour-dark").addEventListener("click", () => {
 
 // Spacing
 
+const spacing = document.getElementById("#spacing")
 
+$("#spacing").addEventListener("input", () => {
+    const spacing = $("#spacing").value
+    $("#container-top").style.padding = 
+    $("#container-bottom").style.padding = `${spacing}px 50px`
+})
+
+// Line height
+
+const lineHeight = document.getElementById("#leading")
+
+$("#leading").addEventListener("input", () => {
+    const lineHeight = $("#leading").value
+    $("#container-top").style.lineHeight = `${lineHeight}px`
+    $("#container-bottom").style.lineHeight = `${lineHeight}px`
+})
+
+// Download meme
+
+const downloadMeme = () => {
+    domtoimage.toBlob($('#container')).then((blob) => {
+        saveAs(blob, 'container.png')
+    })
+}
+
+$("#download-btn").addEventListener('click', downloadMeme)
 
 // Dark theme
 
@@ -282,5 +308,6 @@ $(".button-section").addEventListener("click", () => {
         $("body").setAttribute("data-theme", "light-theme")
     }
 })
+
 
 
