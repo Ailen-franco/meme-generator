@@ -3,7 +3,11 @@
 const $ = (selector) => document.querySelector(selector)
 
 $("#btn-img").addEventListener("click", () => {
-    $("#img-form").style.width = "250px"
+    if (window.innerWidth > 480) {
+        $("#img-form").style.width = "250px"
+    } else {
+        $("#img-form").style.width = "100vw"
+    }
     $("#text-form").style.width = "0"
 })
 
@@ -12,7 +16,11 @@ $("#btn-img-close").addEventListener("click", () => {
 })
 
 $("#btn-text").addEventListener("click", () => {
-    $("#text-form").style.width = "250px"
+    if (window.innerWidth > 480) {
+        $("#text-form").style.width = "250px"
+    } else {
+        $("#text-form").style.width = "100vw"
+    }
     $("#img-form").style.width = "0"
 })
 
@@ -50,49 +58,54 @@ selectAttributes.addEventListener("change", (e) => {
 // filter slide
 
 brightness.addEventListener("change", () => {
-    const brightness = $("#brightness").value
-    containerImg.style.filter = `brightness(${brightness})`
+    applyFilters()
 })
 
 opacity.addEventListener("change", () => {
-    const opacity = $("#opacity").value
-    containerImg.style.filter = `opacity(${opacity})`
+    applyFilters()
 })
 
 contrast.addEventListener("change", () => {
-    const contrast = $("#contrast").value
-    containerImg.style.filter = `contrast(${contrast}%)`
+    applyFilters()
 })
 
 blurFilter.addEventListener("change", () => {
-    const blur = $("#blurFilter").value
-    containerImg.style.filter = `blur(${blur}px)`
+    applyFilters()
 })
 
 grayscale.addEventListener("change", () => {
-    const grayscale = $("#grayscale").value
-    containerImg.style.filter = `grayscale(${grayscale}%)`
+    applyFilters()
 })
 
 sepia.addEventListener("change", () => {
-    const sepia = $("#sepia").value
-    containerImg.style.filter = `sepia(${sepia}%)`
+    applyFilters()
 })
 
 hue.addEventListener("change", () => {
-    const hue = $("#hue").value
-    containerImg.style.filter = `hue-rotate(${hue}deg)`
+    applyFilters()
 })
 
 saturate.addEventListener("change", () => {
-    const saturate = $("#saturate").value
-    containerImg.style.filter = `saturate(${saturate}%)`
+    applyFilters()
 })
 
 invert.addEventListener("change", () => {
-    const invert = $("#invert").value
-    containerImg.style.filter = `invert(${invert})`
+    applyFilters()
 })
+
+const applyFilters = () => {
+    const brightness = $("#brightness").value
+    const opacity = $("#opacity").value
+    const contrast = $("#contrast").value
+    const blur = $("#blurFilter").value
+    const grayscale = $("#grayscale").value
+    const sepia = $("#sepia").value
+    const hue = $("#hue").value
+    const saturate = $("#saturate").value
+    const invert = $("#invert").value
+
+$('#container-img').style.filter = `brightness(${brightness}) opacity(${opacity}) blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hue}deg) sepia(${sepia}%) saturate(${saturate}%) invert(${invert})`
+}
 
 // reset filters
 
@@ -155,19 +168,19 @@ const topCheckbox = document.getElementById("top-checkbox")
 const bottomCheckbox = document.getElementById("bottom-checkbox")
 
 $("#top-checkbox").addEventListener("input", () => {
-     if ($("#top-checkbox").checked) {
-         $("#container-top").classList.add("hidden")
-     } else {
-         $("#container-top").classList.remove("hidden")
-     }
+    if ($("#top-checkbox").checked) {
+        $("#container-top").classList.add("hidden")
+    } else {
+        $("#container-top").classList.remove("hidden")
+    }
 })
 
 $("#bottom-checkbox").addEventListener("input", () => {
-     if ($("#bottom-checkbox").checked) {
-         $("#container-bottom").classList.add("hidden")
-     } else {
-         $("#container-bottom").classList.remove("hidden")
-     }
+    if ($("#bottom-checkbox").checked) {
+        $("#container-bottom").classList.add("hidden")
+    } else {
+        $("#container-bottom").classList.remove("hidden")
+    }
 })
 
 // Font
@@ -234,12 +247,16 @@ $("#text-color-background").addEventListener("input", () => {
 
 $("#checkbox-transparent").addEventListener("change", () => {
     if ($("#checkbox-transparent").checked) {
-        $("#container-top").style.backgroundColor = `transparent`
-        $("#container-bottom").style.backgroundColor = `transparent`
+        $("#container-top").style.backgroundColor = "transparent"
+        $("#container-bottom").style.backgroundColor = "transparent"
+        $("#container-top").style.position = "absolute"
+        $("#container-bottom").style.position = "absolute"
     } else {
         const textBackground = $("#text-color-background").value
         $("#container-top").style.backgroundColor = textBackground
         $("#container-bottom").style.backgroundColor = textBackground
+        $("#container-top").style.position = "static"
+        $("#container-bottom").style.position = "static"
     }
 })
 
@@ -266,11 +283,11 @@ $("#btn-contour-dark").addEventListener("click", () => {
 
 // Spacing
 
-const spacing = document.getElementById("#spacing")
+const spacing = document.getElementById("spacing")
 
 $("#spacing").addEventListener("input", () => {
     const spacing = $("#spacing").value
-    $("#container-top").style.padding = 
+    $("#container-top").style.padding = `${spacing}px 50px`
     $("#container-bottom").style.padding = `${spacing}px 50px`
 })
 
@@ -280,8 +297,14 @@ const lineHeight = document.getElementById("#leading")
 
 $("#leading").addEventListener("input", () => {
     const lineHeight = $("#leading").value
-    $("#container-top").style.lineHeight = `${lineHeight}px`
-    $("#container-bottom").style.lineHeight = `${lineHeight}px`
+    $("#container-top").style.lineHeight = lineHeight
+    $("#container-bottom").style.lineHeight = lineHeight
+})
+
+// Adjust meme
+
+window.addEventListener("resize", () => {
+    $("#container-img").style.height = `${$("#container-img").getBoundingClientRect().width}px`
 })
 
 // Download meme
