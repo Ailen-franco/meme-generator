@@ -298,7 +298,7 @@ const lineHeight = document.getElementById("#leading")
 $("#leading").addEventListener("input", () => {
     const lineHeight = $("#leading").value
     $("#container-top").style.lineHeight = lineHeight
-    $("#container-bottom").style.lineHeight = lineHeight
+    $("#container-bottom").style.lineHeight = lineHeight 
 })
 
 // Adjust meme
